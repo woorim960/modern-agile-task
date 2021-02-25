@@ -5,10 +5,8 @@ const router = express.Router();
 
 const ctrl = require("./root.ctrl");
 
-router.post("/session", ctrl.process.login);
-router.post("/user", ctrl.process.signup);
-router.post("/forgot-id", ctrl.process.sendEmailForId);
-router.post("/forgot-password", ctrl.process.sendEmailForPsword);
-router.post("/password", ctrl.process.resetPsword);
+router.post("/todolist", ctrl.todolist.read);
+router.put("/todolist", ctrl.todolist.create);
+router.delete("/todolist/:index", ctrl.todolist.delete);
 
 module.exports = router;
