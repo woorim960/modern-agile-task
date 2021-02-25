@@ -1,2 +1,2 @@
-# idu-market-server
-인덕 중고시장 서버 저장소
+# simple-todolist
+투두리스트 구현 시험 문제
