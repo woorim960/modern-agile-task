@@ -11,4 +11,8 @@ router.get("/checkbox", (req, res) => {
   res.render("checkbox");
 });
 
+router.get("/selectbox", (req, res) => {
+  res.render("selectbox");
+});
+
 module.exports = router;
