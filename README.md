@@ -2,6 +2,8 @@
 Vanila JS를 이용하여 Front & Back 기능을 구현합니다.  
 주어진 HTML 및 CSS는 수정하지 않는 것을 원칙으로 합니다.
 
+<br>
+
 ### 🖍 문제
 1. [Q&A 구현 - Select Box편](https://github.com/woorim960/wooahan-agile-task/issues/2)
 2. [Q&A 구현 - Check Box편](https://github.com/woorim960/wooahan-agile-task/issues/3)
