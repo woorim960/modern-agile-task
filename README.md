@@ -24,6 +24,8 @@ Vanila JS를 이용하여 Front & Back 기능을 구현합니다.
 
 MIT
 
+<br>
+
 ## 👨🏻‍🏫 출제자
 
 우리밋_woorimIT
