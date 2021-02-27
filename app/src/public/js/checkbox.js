@@ -2,6 +2,7 @@
 
 const checkboxes = document.querySelectorAll("#checkbox input");
 const submit = document.querySelector("#submit_btn");
+const result = document.querySelector("#result");
 
 submit.addEventListener("click", chboxHandler);
 
@@ -20,7 +21,7 @@ function requestHttp(seletedboxes) {
     answers: seletedboxes,
   };
 
-  fetch("/api/submit", {
+  fetch("/api/checkbox/submit", {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
@@ -29,11 +30,10 @@ function requestHttp(seletedboxes) {
   })
     .then((res) => res.json())
     .then((res) => {
-      const result = document.querySelector("#result");
       if (res) {
-        result.innerHTML = "결과: 정답입니다.";
+        result.innerHTML = "정답";
       } else {
-        result.innerHTML = "결과: 오답입니다.";
+        result.innerHTML = "오답";
       }
     })
     .catch((err) => {

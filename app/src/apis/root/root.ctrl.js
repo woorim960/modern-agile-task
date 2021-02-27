@@ -55,19 +55,6 @@ const todolist = {
   },
 };
 
-const checkbox = {
-  isAnswer: (req, res) => {
-    const client = req.body;
-    if (!client.answers || client.answers.length !== 1) {
-      return res.send(false);
-    }
-    if (client.answers[0] === "안창호") {
-      return res.send(true);
-    }
-    return res.send(false);
-  },
-};
-
 const selectbox = {
   isAnswer: (req, res) => {
     const client = req.body;
@@ -75,6 +62,27 @@ const selectbox = {
       return res.json(false);
     }
     return res.json(true);
+  },
+};
+
+const checkbox = {
+  isAnswer: (req, res) => {
+    const client = req.body;
+    const answers = ["열정", "기술력", "인성"];
+
+    if (!client.answers || client.answers.length !== 3) {
+      return res.send(false);
+    }
+
+    let cnt = 0;
+    for (let clnt of client.answers) {
+      if (answers.includes(clnt)) cnt++;
+    }
+
+    if (cnt === 3) {
+      return res.json(true);
+    }
+    return res.json(false);
   },
 };
 

@@ -19,4 +19,9 @@ const root = require("./src/apis/root");
 app.use("/", view);
 app.use("/api/", root);
 
+// 404 렌더링
+app.get("*", (req, res) => {
+  res.render("not-found/404");
+});
+
 module.exports = app;

@@ -11,7 +11,7 @@ router.put("/todolist/:index", ctrl.todolist.update);
 router.delete("/todolist/:index", ctrl.todolist.delete);
 
 router.post("/selectbox/submit", ctrl.selectbox.isAnswer);
-router.post("/submit", ctrl.checkbox.isAnswer);
+router.post("/checkbox/submit", ctrl.checkbox.isAnswer);
 
 router.get("/check", ctrl.login.check);
 router.post("/login", ctrl.login.login);

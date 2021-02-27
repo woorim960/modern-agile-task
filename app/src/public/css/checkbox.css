@@ -60,3 +60,11 @@ button:focus {
 button:active {
   transform: scale(0.98);
 }
+
+span {
+  color: rgb(186, 0, 0);
+}
+
+#result {
+  align-self: center;
+}

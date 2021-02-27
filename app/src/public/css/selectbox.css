@@ -18,6 +18,10 @@ span {
   color: rgb(186, 0, 0);
 }
 
+#result {
+  align-self: center;
+}
+
 select {
   font-size: 16px;
   font-weight: 600;
@@ -35,10 +39,6 @@ select:hover {
 
 select:focus {
   outline: none;
-}
-
-#result {
-  align-self: center;
 }
 
 button {
