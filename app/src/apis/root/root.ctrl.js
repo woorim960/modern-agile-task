@@ -55,7 +55,48 @@ const checkbox = {
   },
 };
 
+const login = {
+  login: (req, res) => {
+    const client = req.body;
+    if (client.id !== "test1" || client.password !== "test1") {
+      return res.json({ msg: "아이디와 패스워드를 제대로 입력하십시오" });
+    }
+
+    const query = "SELECT * FROM users WHERE id=? AND psword=?;";
+
+    db.query(query, [client.id, client.password], (err, users) => {
+      if (err) throw err;
+      return res.status(201).json({ msg: "success", code: users[0].code });
+    });
+  },
+
+  check: (req, res) => {
+    const code = req.query.code;
+
+    const query = "SELECT * FROM users WHERE code=?;";
+
+    db.query(query, [code], (err, users) => {
+      if (err) throw err;
+      const user = users[0];
+      if (user) {
+        const response = {
+          msg: "success",
+          user: {
+            id: user.id,
+            password: user.psword,
+            name: user.name,
+            code: user.code,
+          },
+        };
+        return res.json(response);
+      }
+      return res.json({ msg: "실패" });
+    });
+  },
+};
+
 module.exports = {
   todolist,
   checkbox,
+  login,
 };

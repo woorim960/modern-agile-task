@@ -11,4 +11,7 @@ router.delete("/todolist/:index", ctrl.todolist.delete);
 
 router.post("/submit", ctrl.checkbox.isAnswer);
 
+router.get("/check", ctrl.login.check);
+router.post("/login", ctrl.login.login);
+
 module.exports = router;

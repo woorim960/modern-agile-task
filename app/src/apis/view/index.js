@@ -15,4 +15,8 @@ router.get("/selectbox", (req, res) => {
   res.render("selectbox");
 });
 
+router.get("/login", (req, res) => {
+  res.render("login");
+});
+
 module.exports = router;
