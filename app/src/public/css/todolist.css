@@ -48,6 +48,18 @@ button {
   border-radius: 4px;
 }
 
+button:hover {
+  cursor: pointer;
+}
+
+button:focus {
+  outline: none;
+}
+
+button:active {
+  transform: scale(0.98);
+}
+
 table button {
   margin: 0 auto;
   margin-top: 20px;

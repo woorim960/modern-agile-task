@@ -68,6 +68,16 @@ const checkbox = {
   },
 };
 
+const selectbox = {
+  isAnswer: (req, res) => {
+    const client = req.body;
+    if (client.answer !== "개발") {
+      return res.json(false);
+    }
+    return res.json(true);
+  },
+};
+
 const login = {
   login: (req, res) => {
     const client = req.body;
@@ -110,6 +120,7 @@ const login = {
 
 module.exports = {
   todolist,
+  selectbox,
   checkbox,
   login,
 };

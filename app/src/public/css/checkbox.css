@@ -48,3 +48,15 @@ button {
   background-color:rgb(75, 2, 65);
   border-radius: 4px;
 }
+
+button:hover {
+  cursor: pointer;
+}
+
+button:focus {
+  outline: none;
+}
+
+button:active {
+  transform: scale(0.98);
+}

@@ -95,10 +95,6 @@ function requestUpdate(tr, index) {
 function requestDelete(tr, index) {
   fetch(`/api/todolist/${index}`, {
     method: "DELETE",
-    headers: {
-      "Content-Type": "application/json",
-    },
-    body: JSON.stringify({}),
   })
     .then((res) => res.text())
     .then((res) => {
