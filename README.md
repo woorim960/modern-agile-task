@@ -5,10 +5,11 @@ Vanila JS를 이용하여 Front & Back 기능을 구현합니다.
 <br>
 
 ## 🖍 문제
-1. [Q&A 구현 - Select Box편](https://github.com/woorim960/wooahan-agile-task/issues/2)
-2. [Q&A 구현 - Check Box편](https://github.com/woorim960/wooahan-agile-task/issues/3)
-3. 로그인, 회원가입 구현
-4. [To Do List 구현](https://github.com/woorim960/wooahan-agile-front-task/issues/1)
+* Front-End 개발
+   1. [Q&A 구현 - Select Box편](https://github.com/woorim960/wooahan-agile-task/issues/2)
+   2. [Q&A 구현 - Check Box편](https://github.com/woorim960/wooahan-agile-task/issues/3)
+   3. 로그인, 회원가입 구현
+   4. [To Do List 구현](https://github.com/woorim960/wooahan-agile-front-task/issues/1)
 
 <br>
 
