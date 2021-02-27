@@ -25,14 +25,6 @@ input {
   padding: 10px;
 }
 
-th {
-  color: rgb(109, 0, 89);
-}
-
-td {
-  text-align: center;
-}
-
 button {
   margin: 0 auto;
   margin-top: 20px;
@@ -60,17 +52,10 @@ button:active {
   transform: scale(0.98);
 }
 
-#td-button {
-  margin: 0 auto;
-  margin-top: 20px;
-  margin-bottom: 20px;
-  padding: 2px;
-  padding-top: 5px;
-  padding-bottom: 5px;
-  font-size: 16px;
-  font-weight: 500;
-  width: 80%;
-  color: rgb(255, 234, 165);
-  background-color:rgb(75, 2, 65);
-  border-radius: 4px;
+span {
+  color: rgb(186, 0, 0);
+}
+
+#result {
+  align-self: center;
 }
