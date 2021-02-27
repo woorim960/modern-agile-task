@@ -8,7 +8,7 @@ const table = document.querySelector("table");
 function init() {
   drawInit();
   btn.addEventListener("click", create);
-  table.addEventListener("click", deleteList);
+  table.addEventListener("click", tableHandler);
 }
 
 function create() {
@@ -18,7 +18,7 @@ function create() {
   };
 
   fetch("/api/todolist", {
-    method: "PUT",
+    method: "POST",
     headers: {
       "Content-Type": "application/json",
     },
@@ -26,7 +26,6 @@ function create() {
   })
     .then((res) => res.text())
     .then((res) => {
-      console.log(res);
       if (res) {
         insertInTable(req, res);
       }
@@ -41,7 +40,8 @@ function insertInTable(req, index) {
   const td = `
     <td>${req.name}</td>
     <td>${req.description}</td>
-    <td><button id="td-button">삭제</button></td>
+    <td><button id="td-update">수정</button></td>
+    <td><button id="td-delete">삭제</button></td>
   `;
 
   tr.innerHTML = td;
@@ -49,43 +49,70 @@ function insertInTable(req, index) {
   table.appendChild(tr);
 }
 
-function deleteList(e) {
-  const parentNode = e.target.parentNode;
-  const deleteBtnId = parentNode.childNodes[0].id;
-  const tr = parentNode.parentNode;
+function tableHandler(e) {
+  const btnId = e.target.id;
+  const tr = e.target.parentNode.parentNode;
   const index = tr.getAttribute("index");
 
-  if (deleteBtnId === "td-button") {
-    fetch(`/api/todolist/${index}`, {
-      method: "DELETE",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({}),
-    })
-      .then((res) => res.text())
-      .then((res) => {
-        if (res) {
-          deleteInTable(tr, res);
-        }
-      })
-      .catch((err) => {
-        throw err;
-      });
+  if (btnId === "td-update") {
+    requestUpdate(tr, index);
+  } else if (btnId === "td-delete") {
+    requestDelete(tr, index);
   }
 }
 
-function deleteInTable(tr, res) {
-  console.log(res);
-  if (tr.getAttribute("index") === res) {
-    table.removeChild(tr);
-  }
+function requestUpdate(tr, index) {
+  const req = {
+    name: name.value,
+    description: description.value,
+  };
+
+  fetch(`/api/todolist/${index}`, {
+    method: "PUT",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify(req),
+  })
+    .then((res) => res.text())
+    .then((res) => {
+      if (tr.getAttribute("index") === res) {
+        const td = `
+          <td>${req.name}</td>
+          <td>${req.description}</td>
+          <td><button id="td-update">수정</button></td>
+          <td><button id="td-delete">삭제</button></td>
+        `;
+
+        tr.innerHTML = td;
+      }
+    })
+    .catch((err) => {
+      throw err;
+    });
+}
+
+function requestDelete(tr, index) {
+  fetch(`/api/todolist/${index}`, {
+    method: "DELETE",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify({}),
+  })
+    .then((res) => res.text())
+    .then((res) => {
+      if (tr.getAttribute("index") === res) {
+        table.removeChild(tr);
+      }
+    })
+    .catch((err) => {
+      throw err;
+    });
 }
 
 function drawInit() {
-  fetch("/api/todolist", {
-    method: "POST",
-  })
+  fetch("/api/todolist")
     .then((res) => res.json())
     .then((res) => {
       if (res) {
@@ -102,7 +129,8 @@ function insertInInitTable(posts) {
     const tr = document.createElement("tr");
     const html = `<td>${posts[i].name}</td>
       <td>${posts[i].description}</td>
-      <td><button id="td-button">삭제</button></td>`;
+      <td><button id="td-update">수정</button></td>
+      <td><button id="td-delete">삭제</button></td>`;
 
     tr.innerHTML = html;
     tr.setAttribute("index", posts[i].id);

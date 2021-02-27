@@ -1,6 +1,5 @@
 "use strict";
 
-const mysql = require("mysql");
 let db = require("../../config/db");
 const crypto = require("crypto");
 
@@ -22,7 +21,22 @@ const todolist = {
 
     db.query(query, [index, client.name, client.description], (err, result) => {
       if (err) throw err;
-      return res.status(201).send(index).end();
+      return res.status(201).send(index);
+    });
+  },
+
+  update: (req, res) => {
+    const index = req.params.index;
+    const client = req.body;
+
+    const query = "UPDATE todos SET name=?, description=? WHERE id=?;";
+
+    db.query(query, [client.name, client.description, index], (err, result) => {
+      if (err) throw err;
+      if (result.affectedRows) {
+        return res.status(201).send(index);
+      }
+      return res.status(200).send("수정되지 않았습니다.");
     });
   },
 
@@ -33,9 +47,8 @@ const todolist = {
 
     db.query(query, [index], (err, result) => {
       if (err) throw err;
-      console.log(result);
       if (result.affectedRows) {
-        return res.status(201).send(index).end();
+        return res.status(201).send(index);
       }
       return res.status(200).send("삭제되지 않았습니다.");
     });

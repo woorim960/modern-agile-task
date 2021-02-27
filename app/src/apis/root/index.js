@@ -5,8 +5,9 @@ const router = express.Router();
 
 const ctrl = require("./root.ctrl");
 
-router.post("/todolist", ctrl.todolist.read);
-router.put("/todolist", ctrl.todolist.create);
+router.get("/todolist", ctrl.todolist.read);
+router.post("/todolist", ctrl.todolist.create);
+router.put("/todolist/:index", ctrl.todolist.update);
 router.delete("/todolist/:index", ctrl.todolist.delete);
 
 router.post("/submit", ctrl.checkbox.isAnswer);
