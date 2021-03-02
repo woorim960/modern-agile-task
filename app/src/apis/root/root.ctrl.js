@@ -68,6 +68,7 @@ const selectbox = {
 const checkbox = {
   isAnswer: (req, res) => {
     const client = req.body;
+    console.log(client);
     const answers = ["열정", "기술력", "인성"];
 
     if (!client.answers || client.answers.length !== 3) {
