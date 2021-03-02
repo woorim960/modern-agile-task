@@ -13,7 +13,7 @@ Vanila JS를 이용하여 Front & Back 기능을 구현합니다.
 
 <br>
 
-## 과제 사용법
+## 📝 과제 사용법
 [여기](https://github.com/woowacourse/woowacourse-docs/tree/master/precourse)를 참고.
 
 ## 🧾 과제 다운로드 (파일만 다운로드 받는 법)
