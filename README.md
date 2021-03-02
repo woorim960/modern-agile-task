@@ -16,6 +16,8 @@ Vanila JS를 이용하여 Front & Back 기능을 구현합니다.
 ## 📝 과제 사용법
 [여기](https://github.com/woowacourse/woowacourse-docs/tree/master/precourse)를 참고.
 
+<br>
+
 ## 🧾 과제 다운로드 (파일만 다운로드 받는 법)
 [여기](https://github.com/woorim960/wooahan-agile-task/releases/tag/v1.1.0-task)로 이동하여 ```ZIP``` **압축 파일**을 다운로드 받아주십시오.
 > 참고.jpeg
