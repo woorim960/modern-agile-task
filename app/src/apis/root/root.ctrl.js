@@ -90,20 +90,24 @@ const checkbox = {
 const login = {
   login: (req, res) => {
     const client = req.body;
-    if (client.id !== "test1" || client.password !== "test1") {
-      return res.json({ msg: "아이디와 패스워드를 제대로 입력하십시오" });
+    if (client.id !== "test" || client.password !== "test") {
+      return res
+        .status(400)
+        .json({ msg: "아이디와 패스워드를 제대로 입력하십시오" });
     }
 
     const query = "SELECT * FROM users WHERE id=? AND psword=?;";
 
     db.query(query, [client.id, client.password], (err, users) => {
       if (err) throw err;
-      return res.status(201).json({ msg: "success", code: users[0].code });
+      return res.status(200).json({ msg: "success", code: users[0].code });
     });
   },
 
   check: (req, res) => {
     const code = req.query.code;
+    if (!code)
+      return res.status(400).json({ msg: "정보확인에 실패하셨습니다." });
 
     const query = "SELECT * FROM users WHERE code=?;";
 
@@ -120,9 +124,9 @@ const login = {
             code: user.code,
           },
         };
-        return res.json(response);
+        return res.status(200).json(response);
       }
-      return res.json({ msg: "실패" });
+      return res.status(400).json({ msg: "정보확인에 실패하셨습니다." });
     });
   },
 };
