@@ -16,7 +16,6 @@ const todolist = {
   create: (req, res) => {
     const client = req.body;
     const index = crypto.randomBytes(20).toString("hex").slice(0, 20); // token 생성
-
     const query = "INSERT INTO todos(id, name, description) VALUES (?, ?, ?);";
 
     db.query(query, [index, client.name, client.description], (err, result) => {
@@ -28,7 +27,6 @@ const todolist = {
   update: (req, res) => {
     const index = req.params.index;
     const client = req.body;
-
     const query = "UPDATE todos SET name=?, description=? WHERE id=?;";
 
     db.query(query, [client.name, client.description, index], (err, result) => {
@@ -91,9 +89,7 @@ const login = {
   login: (req, res) => {
     const client = req.body;
     if (client.id !== "test" || client.password !== "test") {
-      return res
-        .status(400)
-        .json({ msg: "아이디와 패스워드를 제대로 입력하십시오" });
+      return res.status(400).json({ msg: "아이디와 패스워드를 제대로 입력하십시오" });
     }
 
     const query = "SELECT * FROM users WHERE id=? AND psword=?;";
@@ -106,8 +102,7 @@ const login = {
 
   check: (req, res) => {
     const code = req.query.code;
-    if (!code)
-      return res.status(400).json({ msg: "정보확인에 실패하셨습니다." });
+    if (!code) return res.status(400).json({ msg: "정보확인에 실패하셨습니다." });
 
     const query = "SELECT * FROM users WHERE code=?;";
 
