@@ -16,5 +16,3 @@ submitBtn.addEventListener('click', () => {
     .then((res) => res.json())
     .then((isAnswer) => result.innerHTML = isAnswer ? "정답" : "오답");
 });
-
-console.log(2)
