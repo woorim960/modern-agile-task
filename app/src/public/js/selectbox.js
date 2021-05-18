@@ -2,7 +2,7 @@
 const selected = document.getElementsByName("selectbox")[0];
 const button = document.getElementById("submit-btn");
 const result = document.getElementById("result");
-
+console.log(selected.value);
 button.addEventListener("click", () => {
     fetch("/api/selectbox/submit", {
         method : "POST",
