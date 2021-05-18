@@ -14,7 +14,7 @@ mode.addEventListener('click', () => {
   fetch(SUBMIT_URL, {
     method: 'POST',
     headers: {
-      'Content-Type': 'application/json; charset=utf-8',
+      'Content-Type': 'application/json; charset=utf-8', // 내가보내는 타입선언
     },
     body: JSON.stringify({ answer: selectBox.value }),
   })
