@@ -1,12 +1,12 @@
-const selectList = document.getElementsByName("selectbox")[0];
-const submitBtn = document.getElementById("submit-btn");
-const submitResult = document.getElementById("result");
+const selectList = document.querySelector("selectbox");  
+const submitBtn = document.querySelector("submit-btn");
+const submitResult = document.querySelector("result");
 
 submitBtn.addEventListener("click", () => {
     fetch('/api/selectbox/submit', {
         method: 'POST',
         headers: {
-            "Content-Type" : "application/json"
+            "Content-Type" : "application/json" 
         },
         body: JSON.stringify({
             answer: selectList.value
