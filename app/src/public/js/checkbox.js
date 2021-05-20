@@ -1,4 +1,4 @@
-const checkBox = document.querySelectorAll("#checkbox label input");
+const ㅡcheckBox = document.querySelectorAll("#checkbox label input");
 
 const submitBtn = document.querySelector("#submit_btn");
 const submitResult = document.querySelector("#result");
