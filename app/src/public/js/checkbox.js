@@ -9,7 +9,7 @@ button.addEventListener("click", () => {
         checkLists.push(ch.value)
     })
     console.log(checkLists);
-    fetch("/api/selectbox/submit", {
+    fetch("/api/checkbox/submit", {
         method : "POST",
         headers : {"Content-Type" : "application/json; charset = utf-8"},
         body : JSON.stringify({
@@ -18,5 +18,4 @@ button.addEventListener("click", () => {
     })
     .then((response) => response.json())
     .then((isAnswer) => result.innerHTML = isAnswer ? "정답" : "오답");
-}); 
-
+});
