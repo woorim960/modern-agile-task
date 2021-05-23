@@ -22,6 +22,3 @@ button.addEventListener("click", () => {
     //           else span.innerHTML = "오답";
     //       });
     //   })
- 
-
-
