@@ -1,4 +1,5 @@
 "use strict";
+
 const name = document.querySelector("#name");  
 const description = document.querySelector("#description");
 const enrollBtn = document.querySelector("button");
