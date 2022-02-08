@@ -31,9 +31,14 @@ MIT
 
 <br>
 
+## 💻 모던 애자일 팀
+* [깃허브](https://github.com/modern-agile-team)
+* [기술 블로그](https://medium.com/modern-agile-team)
+* [유튜브](https://www.youtube.com/channel/UC99JTVHdVLVWpCjVrm1jzMw)
+
 ## 👨🏻‍🏫 출제자
 
 우리밋_woorimIT
-* [github](https://github.com/woorim960)
-* [blog](https://blog.naver.com/dnfla420)
-* [youtube](https://www.youtube.com/channel/UCS0F25vig_sPIQXMiK8IdSg)
+* [깃허브](https://github.com/woorim960)
+* [기술 블로그](https://blog.naver.com/dnfla420)
+* [유튜브](https://www.youtube.com/channel/UCS0F25vig_sPIQXMiK8IdSg)
