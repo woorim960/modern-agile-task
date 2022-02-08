@@ -1,4 +1,4 @@
-# 👨🏻‍💻 우아한 애자일 Front-End & Back-End 과제
+# 👨🏻‍💻 모던 애자일 Front-End & Back-End 과제
 Vanila JS를 이용하여 Front & Back 기능을 구현합니다.  
 주어진 HTML 및 CSS는 수정하지 않는 것을 원칙으로 합니다.
 
@@ -6,10 +6,10 @@ Vanila JS를 이용하여 Front & Back 기능을 구현합니다.
 
 ## 🖍 문제
 * Front-End 개발
-   1. [Q&A 구현 - Select Box편](https://github.com/woorim960/wooahan-agile-task/issues/2)
-   2. [Q&A 구현 - Check Box편](https://github.com/woorim960/wooahan-agile-task/issues/3)
-   3. [Log In 구현](https://github.com/woorim960/wooahan-agile-task/issues/6)
-   4. [To Do List 구현](https://github.com/woorim960/wooahan-agile-front-task/issues/1)
+   1. [Q&A 구현 - Select Box편](https://github.com/woorim960/modern-agile-task/issues/2)
+   2. [Q&A 구현 - Check Box편](https://github.com/woorim960/modern-agile-task/issues/3)
+   3. [Log In 구현](https://github.com/woorim960/modern-agile-task/issues/6)
+   4. [To Do List 구현](https://github.com/woorim960/modern-agile-front-task/issues/1)
 
 <br>
 
